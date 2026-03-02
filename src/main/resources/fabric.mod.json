@@ -3,15 +3,15 @@
 	"id": "wjphtest",
 	"version": "${version}",
 	"name": "wjphtest",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A first test mod made by wjph2k10!",
 	"authors": [
-		"Me!"
+		"Wjph2k10 - Coder, Developer"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://wjph2k10.github.io",
+		"sources": "https://github.com/wjph2k10/wjphtest-1.21.11"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/wjphtest/icon.png",
 	"environment": "*",
 	"entrypoints": {
@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"net.wjph2k10.wjphtest.WjphtestDataGenerator"
+		],
+		"client": [
+			"net.wjph2k10.wjphtest.WjphTestClient"
 		]
 	},
 	"mixins": [
