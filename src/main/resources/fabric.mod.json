@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "wjphtest",
+	"version": "${version}",
+	"name": "wjphtest",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/wjphtest/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.wjph2k10.wjphtest.Wjphtest"
+		],
+		"fabric-datagen": [
+			"net.wjph2k10.wjphtest.WjphtestDataGenerator"
+		]
+	},
+	"mixins": [
+		"wjphtest.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
