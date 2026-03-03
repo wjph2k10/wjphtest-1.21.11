@@ -1,26 +1,24 @@
 package net.wjph2k10.wjphtest.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
+import net.wjph2k10.wjphtest.WjphTest;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.wjph2k10.wjphtest.WjphTest;
+
+import java.util.function.Function;
 
 public class ModItems {
+    public static final Item PHTHALUM_ARCANUS = registerItem("phthalum_arcanus",
+            setting -> new AxeItem(ToolMaterial.NETHERITE, 6, -3.2f, setting));
 
-    public static final Item TESTING_ITEM = registerItem("test_item", new Item(new Item.Settings()));
-
-    private static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, Identifier.of(WjphTest.MOD_ID, name), item);
+    private static Item registerItem(String name, Function<Item.Settings, Item> function) {
+        return Registry.register(Registries.ITEM, Identifier.of(WjphTest.MOD_ID, name),
+                function.apply(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(WjphTest.MOD_ID, name)))));
     }
-
     public static void registerModItems() {
-        WjphTest.LOGGER.info("Registering mod items for " + WjphTest.MOD_ID);
-
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-            entries.add(TESTING_ITEM);
-        });
+        WjphTest.LOGGER.info("Registering Items for " + WjphTest.MOD_ID);
     }
 }
