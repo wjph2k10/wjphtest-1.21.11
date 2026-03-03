@@ -16,7 +16,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.wjph2k10.wjphtest.Wjphtest"
+			"net.wjph2k10.wjphtest.WjphTest"
 		],
 		"fabric-datagen": [
 			"net.wjph2k10.wjphtest.WjphtestDataGenerator"

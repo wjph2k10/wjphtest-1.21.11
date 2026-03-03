@@ -11,8 +11,7 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 public class ModItems {
-    public static final Item PHTHALUM_ARCANUS = registerItem("phthalum_arcanus",
-            setting -> new AxeItem(ToolMaterial.NETHERITE, 6, -3.2f, setting));
+    public static final Item TEST_ITEM = registerItem("test_item", Item::new);
 
     private static Item registerItem(String name, Function<Item.Settings, Item> function) {
         return Registry.register(Registries.ITEM, Identifier.of(WjphTest.MOD_ID, name),
